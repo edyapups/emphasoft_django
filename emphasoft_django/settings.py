@@ -45,7 +45,8 @@ INSTALLED_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
-    'social_django'
+    'social_django',
+    'sorl.thumbnail',
 ]
 
 LOCAL_APPS = [
