@@ -6,7 +6,6 @@ from . import forms
 from .models import User
 
 
-
 def login(request):
     return render(request, 'emphasoft_app/login.html')
 

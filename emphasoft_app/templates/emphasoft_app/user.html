@@ -9,21 +9,18 @@
         <a href="{% url "emphasoft_app:edit_user" %}">Редактировать информацию</a>
     {% endif %}
     <h2> {{ user.get_full_name }}</h2>
+    {% load thumbnail %}
+    {% thumbnail user.profile.avatar "50x50" crop='center' as img %}
+        <img src="{{ img.url }}" style="border-radius: 50%">
+    {% empty %}
+        А нету фоточки
+    {% endthumbnail %}
     <ul>
         <li>
             Username: {{ user.username }}
         </li>
         <li>
             Bio: {{ user.profile.bio }}
-        </li>
-        <li>
-            Avatar:
-            {% load thumbnail %}
-            {% thumbnail user.profile.avatar "100" as img %}
-                <img src="{{ img.url }}">
-            {% empty %}
-                А нету фоточки
-            {% endthumbnail %}
         </li>
     </ul>
 </body>
