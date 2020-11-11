@@ -5,11 +5,16 @@ from django.dispatch import receiver
 from sorl.thumbnail import ImageField
 
 import os
+import uuid
 
 
 def user_avatar_path(instance, filename):
     _, ext = os.path.splitext(filename)
-    return "avatars/{}{}".format(instance.user.id, ext)
+    return "avatars/user_{user_id}/{file_name}{ext}".format(
+        user_id=instance.user.id,
+        ext=ext,
+        file_name=uuid.uuid4(),
+    )
 
 
 class Profile(models.Model):
