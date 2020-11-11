@@ -10,15 +10,15 @@ import uuid
 
 def user_avatar_path(instance, filename):
     _, ext = os.path.splitext(filename)
-    return "avatars/user_{user_id}/{file_name}{ext}".format(
-        user_id=instance.user.id,
+    return "users/user_{user_id}/avatar{ext}".format(
+        user_id=instance.user.profile.uuid,
         ext=ext,
-        file_name=uuid.uuid4(),
     )
 
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    uuid = models.UUIDField(default=uuid.uuid4, editable=False)
     bio = models.TextField(max_length=1000, blank=True)
     avatar = ImageField(upload_to=user_avatar_path)
 
