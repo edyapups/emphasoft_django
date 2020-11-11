@@ -15,11 +15,11 @@ def index(request):
     return redirect('/user/{}'.format(request.user.id))
 
 
+@login_required()
 def user_page(request, user_id):
     user = User.objects.get(pk=user_id)
     return render(request, 'emphasoft_app/user.html', context={
         'user': user,
-        'request_user': request.user,
     })
 
 

@@ -1,0 +1,10 @@
+{% extends 'emphasoft_app/base.html' %}
+
+{% block header %}
+    <header>
+        <div class="name">
+            {{ request.user.get_full_name }}
+        </div>
+        <a href="{% url 'emphasoft_app:logout' %}" class="logout">Выйти</a>
+    </header>
+{% endblock %}

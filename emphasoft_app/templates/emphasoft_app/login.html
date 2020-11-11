@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login page</title>
-</head>
-<body>
-    <ul>
-        <li class="google">
-            <a href="{% url "social:begin" "google-oauth2" %}">Login with google</a>
-        </li>
-    </ul>
-</body>
-</html>
+{% extends "emphasoft_app/base.html" %}
+{% block title %}Login page{% endblock %}
+
+{% block content %}
+    <a href="{% url "social:begin" "google-oauth2" %}">Login with google</a>
+{% endblock %}

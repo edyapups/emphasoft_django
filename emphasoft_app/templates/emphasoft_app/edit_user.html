@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>User edit page</title>
-</head>
-<body>
+{% extends "emphasoft_app/base_is_authenticated.html" %}
+{% block title %}Edit user{% endblock %}
+
+{% block content %}
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ user_form.as_p }}
         {{ profile_form.as_p }}
         <button type="submit">Сохранить изменения</button>
     </form>
-</body>
-</html>
+{% endblock %}

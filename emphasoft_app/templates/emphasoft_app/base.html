@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static "emphasoft_app/normalize.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "emphasoft_app/style.css" %}">
+    <title>{% block title %}Base{% endblock %}</title>
+</head>
+<body>
+    {% block header %}{% endblock %}
+    <div class="content">{% block content %}{% endblock %}</div>
+</body>
+</html>
