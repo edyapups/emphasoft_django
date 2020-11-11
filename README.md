@@ -17,5 +17,7 @@
 
  - Создать файл переменных среды формата:
 	    SECRET_KEY=secret-key  
-	    ALLOWED_HOSTS=first.ip,second.ip  
+	    ALLOWED_HOSTS=first.domain,second.domain  
 	    DEBUG=True
+        SOCIAL_AUTH_GOOGLE_OAUTH2_KEY=auth-key
+        SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET=auth-secret
