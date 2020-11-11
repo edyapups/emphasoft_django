@@ -4,11 +4,18 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from sorl.thumbnail import ImageField
 
+import os
+
+
+def user_avatar_path(instance, filename):
+    _, ext = os.path.splitext(filename)
+    return "avatars/{}{}".format(instance.user.id, ext)
+
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.TextField(max_length=1000, blank=True)
-    avatar = ImageField(upload_to='avatars/')
+    avatar = ImageField(upload_to=user_avatar_path)
 
 
 @receiver(post_save, sender=User)

@@ -3,5 +3,5 @@
 .idea/
 venv/
 */migrations
-templates/
 __pycache__/
+/media/
