@@ -1,23 +1,30 @@
 {% extends "emphasoft_app/base_is_authenticated.html" %}
+{% load static %}
+
 {% block title %}User{% endblock %}
 
 {% block content %}
-    {% if request.user.profile.uuid == user.profile.uuid%}
-        <a href="{% url "emphasoft_app:edit_user" %}">Редактировать информацию</a>
-    {% endif %}
-    <h2> {{ user.get_full_name }}</h2>
-    {% load thumbnail %}
-    {% thumbnail user.profile.avatar "50x50" crop='center' as img %}
-        <img src="{{ img.url }}" style="border-radius: 50%">
-    {% empty %}
-        А нету фоточки
-    {% endthumbnail %}
-    <ul>
-        <li>
-            Username: {{ user.username }}
-        </li>
-        <li>
-            Bio: {{ user.profile.bio }}
-        </li>
-    </ul>
+    <div class="content__element background_and_shadow">
+        <span class="user_profile_name user">{{ user.get_full_name }} ({{ user.username }})</span>
+        {% load thumbnail %}
+        {% thumbnail user.profile.avatar "100x100" crop='center' as img %}
+            <img src="{{ img.url }}" class="user_profile_photo user">
+        {% empty %}
+            <img src="{% static "emphasoft_app/empty-avatar.png" %}" class="user_profile_photo user">
+        {% endthumbnail %}
+    </div>
+    <div class="content__element background_and_shadow">
+        <div class="user_profile_information">
+            <h2>О себе</h2>
+            <div>{{ user.profile.bio }}</div>
+        </div>
+    </div>
+    <div class="content__element">
+        {% if request.user.profile.uuid == user.profile.uuid %}
+            <a href="{% url "emphasoft_app:edit_user" %}"
+               class="link user_bottom" style="float:left">Редактировать профиль</a>
+        {% endif %}
+        <a href="{% url "emphasoft_app:index" %}"
+           class="link user_bottom" style="float:right">Вернуться на стартовую страницу</a>
+    </div>
 {% endblock %}

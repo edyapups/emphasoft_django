@@ -12,7 +12,9 @@ def login(request):
 
 @login_required()
 def index(request):
-    return redirect('/user/{}'.format(request.user.id))
+    return render(request, 'emphasoft_app/index.html', context={
+        'users': User.objects.all(),
+    })
 
 
 @login_required()

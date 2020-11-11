@@ -5,30 +5,100 @@
 
 html {
     max-width: 800px;
+    min-width: 320px;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 0;
+    background-color: #f9f9f9;
 }
+
 header {
     position: relative;
-    height: 42px;
-    background-color: dodgerblue;
-    border-bottom: 1px solid rgba(0,0,0,0.4);
+    background-color: #4a76a8;
     display: flow-root;
-    padding: 0 0.5rem;
+    padding: 0;
     margin: 0 auto;
 }
 
-header .logout {
+.header__child {
     position: relative;
+    padding: 1rem;
+    color: #dae2ea;
+}
+
+.link {
+    text-decoration: none;
+}
+
+#header_logout {
     float: right;
 }
 
-header .name {
-    position: relative;
+.header__child:hover {
+    background-color: #2a5885;
+}
+
+#header_name {
     float: left;
 }
 
 .content {
     position: relative;
-    padding-top: 1rem;
+}
+
+.content__element {
+    position: relative;
+    display: flow-root;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.content__element.background_and_shadow {
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 0 #d3d9de,0 0 0 1px #e7e8ec;
+}
+
+.background_and_shadow.clickable:hover {
+    background: #d3d9de;
+    cursor: pointer;
+}
+
+.user_profile_photo {
+    float: right;
+    border-radius: 4px;
+}
+
+.user_profile_photo.user {
+    height: 100px;
+    width: 100px;
+}
+
+.user_profile_photo.index {
+    height: 30px;
+    width: 30px;
+}
+
+.user_profile_name {
+    float: left;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.user_profile_name.index {
+    font-size: 1.25rem;
+}
+.user_profile_name.user {
+    font-size: 2.25rem;
+}
+
+.user_profile_information {
+    display: flow-root;
+}
+
+.link.user_bottom {
+    color: #939393;
+}
+
+.link.user_bottom:hover {
+    text-decoration: underline;
 }

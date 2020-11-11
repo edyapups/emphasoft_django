@@ -2,7 +2,7 @@
 {% block title %}Edit user{% endblock %}
 
 {% block content %}
-    <form method="post" enctype="multipart/form-data">
+    <form method="post" enctype="multipart/form-data" class="content__element background_and_shadow">
         {% csrf_token %}
         {{ user_form.as_p }}
         {{ profile_form.as_p }}
