@@ -38,6 +38,7 @@
 }
 
 
+
 html {
     max-width: 800px;
     min-width: 320px;
@@ -52,7 +53,7 @@ header {
     display: flex;
     justify-content: flex-start;
     padding: 0;
-    margin: 0 auto;
+    margin: 0 auto 1rem auto;
 }
 
 header a:hover {
@@ -86,7 +87,7 @@ header :last-child {
     position: relative;
     display: flex;
     flex-direction: column;
-    margin: 1rem;
+    margin: 0.5rem 1rem;
     padding: 1rem;
     background: white;
     border-radius: 4px;
@@ -142,6 +143,15 @@ header :last-child {
 #user_name_and_avatar span {
     font-size: 3rem;
     color: #333333;
+}
+
+#user_about_content {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+#user_about_content h2 {
+    margin: 0 0 2rem 0;
 }
 
 /*TODO: Переделать все на flexbox*/

@@ -15,7 +15,7 @@
     </div>
 
     {% if user.profile.bio|length != 0 %}
-    <div class="content__element">
+    <div class="content__element" id="user_about_content">
             <h2>О себе</h2>
             <span>{{ user.profile.bio }}</span>
     </div>
