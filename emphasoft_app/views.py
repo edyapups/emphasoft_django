@@ -13,7 +13,7 @@ def login(request):
 @login_required()
 def index(request):
     return render(request, 'emphasoft_app/index.html', context={
-        'users': User.objects.all(),
+        'users': User.objects.all().order_by('-last_login'),
     })
 
 
