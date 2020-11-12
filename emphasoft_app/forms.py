@@ -22,7 +22,5 @@ class ProfileForm(forms.ModelForm):
             if image.size > 4 * 1024 * 1024:
                 raise ValidationError("Размер изображения слишком большой ( > 4mb )")
             return image
-        else:
-            raise ValidationError("Не удалось открыть изображение")
 
 # TODO: Ограничить размер файла
