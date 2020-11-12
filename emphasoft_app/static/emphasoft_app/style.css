@@ -84,9 +84,11 @@ header {
     top: 50%;
     transform: translateY(-50%);
 }
+
 .user_profile_name.index {
     font-size: 1.25rem;
 }
+
 .user_profile_name.user {
     font-size: 2.25rem;
 }
@@ -102,3 +104,5 @@ header {
 .link.user_bottom:hover {
     text-decoration: underline;
 }
+
+/*TODO: Переделать все на flexbox*/
