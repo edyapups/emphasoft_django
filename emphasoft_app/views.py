@@ -11,6 +11,11 @@ def login(request):
 
 
 @login_required()
+def me(request):
+    return redirect('emphasoft_app:user', user_id=request.user.id)
+
+
+@login_required()
 def index(request):
     return render(request, 'emphasoft_app/index.html', context={
         'users': User.objects.all().order_by('-last_login'),

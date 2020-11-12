@@ -2,7 +2,7 @@
 
 {% block header %}
     <header>
-        <a href="{% url 'emphasoft_app:user' user_id=request.user.id %}">{{ request.user.get_full_name }}</a>
+        <a href="{% url 'emphasoft_app:me' %}">Профиль</a>
         <a href="{% url 'emphasoft_app:index' %}">Главная</a>
         <a href="{% url 'emphasoft_app:logout' %}">Выйти</a>
     </header>
