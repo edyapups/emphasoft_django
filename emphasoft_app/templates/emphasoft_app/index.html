@@ -5,7 +5,7 @@
 
 {% block content %}
     {% for user in users %}
-        <div class="content__element"
+        <div class="content__element index_element clickable"
         onclick="window.location.href = '{% url 'emphasoft_app:user' user_id=user.id %}'">
             <span class="">{{ user.get_full_name }} ({{ user.username }})</span>
             {% load thumbnail %}
