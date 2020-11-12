@@ -1,5 +1,6 @@
 :root {
     font-size: 16px;
+    color: #555555;
     font-family: Verdana, sans-serif;
 }
 
@@ -92,12 +93,23 @@ header :last-child {
     box-shadow: 0 1px 0 0 #d3d9de,0 0 0 1px #e7e8ec;
 }
 
+.content__element a {
+    text-decoration: none;
+    color: #828282;
+}
+
+.content__element a:hover {
+    text-decoration: underline;
+    color: #4a76a8;
+}
+
 .clickable:hover {
     background: #d3d9de;
     cursor: pointer;
 }
 
 .content__element span {
+    font-size: 1.25rem;
     margin-right: 1rem;
     max-width: fit-content;
     overflow: hidden;
@@ -125,6 +137,11 @@ header :last-child {
     align-items: center;
     flex-flow: nowrap row;
     justify-content: space-between;
+}
+
+#user_name_and_avatar span {
+    font-size: 3rem;
+    color: #333333;
 }
 
 /*TODO: Переделать все на flexbox*/
