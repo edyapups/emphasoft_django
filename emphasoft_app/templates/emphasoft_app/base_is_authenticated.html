@@ -2,8 +2,8 @@
 
 {% block header %}
     <header>
-        <a id="header_name" class="header__child link"
-           href="{% url 'emphasoft_app:user' user_id=request.user.id %}">{{ request.user.get_full_name }}</a>
-        <a href="{% url 'emphasoft_app:logout' %}" id="header_logout" class="header__child link">Выйти</a>
+        <a href="{% url 'emphasoft_app:user' user_id=request.user.id %}">{{ request.user.get_full_name }}</a>
+        <a href="{% url 'emphasoft_app:index' %}">Главная</a>
+        <a href="{% url 'emphasoft_app:logout' %}">Выйти</a>
     </header>
 {% endblock %}

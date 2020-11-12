@@ -5,14 +5,14 @@
 
 {% block content %}
     {% for user in users %}
-        <div class="content__element background_and_shadow clickable"
+        <div class="index_element content__element clickable"
         onclick="window.location.href = '{% url 'emphasoft_app:user' user_id=user.id %}'">
-            <span class="user_profile_name index">{{ user.get_full_name }} ({{ user.username }})</span>
+            <span class="">{{ user.get_full_name }} ({{ user.username }})</span>
             {% load thumbnail %}
-            {% thumbnail user.profile.avatar "30x30" crop='center' as img %}
-                <img src="{{ img.url }}" class="user_profile_photo index">
+            {% thumbnail user.profile.avatar "40x40" crop='center' as img %}
+                <img src="{{ img.url }}" class="">
             {% empty %}
-                <img src="{% static "emphasoft_app/empty-avatar.png" %}" class="user_profile_photo index">
+                <img src="{% static "emphasoft_app/empty-avatar.png" %}" class="">
             {% endthumbnail %}
         </div>
     {% endfor %}

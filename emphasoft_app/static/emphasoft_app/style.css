@@ -14,95 +14,87 @@ html {
 header {
     position: relative;
     background-color: #4a76a8;
-    display: flow-root;
+    display: flex;
+    justify-content: flex-start;
     padding: 0;
     margin: 0 auto;
 }
 
-.header__child {
-    position: relative;
-    padding: 1rem;
-    color: #dae2ea;
-}
-
-.link {
-    text-decoration: none;
-}
-
-#header_logout {
-    float: right;
-}
-
-.header__child:hover {
+header a:hover {
     background-color: #2a5885;
 }
 
-#header_name {
-    float: left;
-}
-
-.content {
-    position: relative;
-}
-
-.content__element {
-    position: relative;
-    display: flow-root;
-    margin: 1rem;
+header a {
+    overflow: hidden;
+    min-width: fit-content;
+    color: #dae2ea;
+    text-decoration: none;
     padding: 1rem;
 }
 
-.content__element.background_and_shadow {
+header :last-child {
+    margin-left: auto;
+}
+
+header :first-child {
+    min-width: auto;
+}
+
+
+/*-------*/
+
+
+.content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.content__element {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 1rem;
     background: white;
     border-radius: 4px;
     box-shadow: 0 1px 0 0 #d3d9de,0 0 0 1px #e7e8ec;
 }
 
-.background_and_shadow.clickable:hover {
+.clickable:hover {
     background: #d3d9de;
     cursor: pointer;
 }
 
-.user_profile_photo {
-    float: right;
+.content__element span {
+    margin-right: 1rem;
+    max-width: fit-content;
+    overflow: hidden;
+}
+
+.content__element img {
+    height: 100px;
+    width: 100px;
     border-radius: 4px;
 }
 
-.user_profile_photo.user {
-    height: 100px;
-    width: 100px;
+.index_element {
+    align-items: center;
+    flex-flow: nowrap row;
+    justify-content: space-between;
 }
 
-.user_profile_photo.index {
-    height: 30px;
-    width: 30px;
+.index_element img {
+    height: 40px;
+    width: 40px;
+    border-radius: 4px;
 }
 
-.user_profile_name {
-    float: left;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.user_profile_name.index {
-    font-size: 1.25rem;
-}
-
-.user_profile_name.user {
-    font-size: 2.25rem;
-}
-
-.user_profile_information {
-    display: flow-root;
-}
-
-.link.user_bottom {
-    color: #939393;
-}
-
-.link.user_bottom:hover {
-    text-decoration: underline;
+#user_name_and_avatar {
+    align-items: center;
+    flex-flow: nowrap row;
+    justify-content: space-between;
 }
 
 /*TODO: Переделать все на flexbox*/
