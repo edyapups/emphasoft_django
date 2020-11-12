@@ -16,6 +16,7 @@
 ## Настройка
 
  - Создать файл переменных среды формата:
+ 
 	    SECRET_KEY=secret-key  
 	    ALLOWED_HOSTS=first.domain,second.domain  
 	    DEBUG=True
