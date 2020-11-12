@@ -3,6 +3,40 @@
     font-family: Verdana, sans-serif;
 }
 
+
+#login_button {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 1rem;
+    padding: 1rem 2rem 1rem 2rem;
+    display: flex;
+    align-items: center;
+    flex-flow: nowrap row;
+
+    background-color: white;
+    box-shadow: 0 1px 0 0 #d3d9de,0 0 0 1px #e7e8ec;
+    border-radius: 10px;
+}
+
+#login_button:hover {
+    background: #d3d9de;
+    cursor: pointer;
+}
+
+#login_button span {
+    color: #828282;
+    font-size: 2rem;
+}
+
+#login_button img {
+    height: 40px;
+    width: 40px;
+    margin-right: 1.5rem;
+}
+
+
 html {
     max-width: 800px;
     min-width: 320px;
@@ -34,10 +68,6 @@ header a {
 
 header :last-child {
     margin-left: auto;
-}
-
-header :first-child {
-    min-width: auto;
 }
 
 
