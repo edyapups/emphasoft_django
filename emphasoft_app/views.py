@@ -24,10 +24,13 @@ def index(request):
 
 @login_required()
 def user_page(request, user_id):
-    user = User.objects.get(pk=user_id)
-    return render(request, 'emphasoft_app/user.html', context={
-        'user': user,
-    })
+    try:
+        user = User.objects.get(pk=user_id)
+        return render(request, 'emphasoft_app/user.html', context={
+            'user': user,
+        })
+    except User.DoesNotExist:
+        raise Http404
 
 
 @login_required()
