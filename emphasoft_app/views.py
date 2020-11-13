@@ -53,4 +53,3 @@ def edit_user(request):
         'user_form': user_form,
         'profile_form': profile_form
     })
-# Create your views here.
