@@ -17,6 +17,11 @@ class ProfileForm(forms.ModelForm):
         fields = ('bio', 'avatar')
 
     def clean_avatar(self):
+        """
+        Checks that the size of the uploaded file does not exceed 4MB.
+
+        :return:
+        """
         image: TemporaryUploadedFile = self.cleaned_data.get('avatar', False)
         if image:
             if image.size > 4 * 1024 * 1024:
