@@ -37,10 +37,27 @@ class Profile(models.Model):
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
+    """
+    The function creates a Profile instance every time a User instance is created.
+
+    :param sender:
+    :param instance: User
+    :param created:
+    :param kwargs:
+    :return:
+    """
     if created:
         Profile.objects.create(user=instance)
 
 
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
+    """
+    The function saves a Profile instance every time a User instance is saved.
+
+    :param sender:
+    :param instance:
+    :param kwargs:
+    :return:
+    """
     instance.profile.save()
