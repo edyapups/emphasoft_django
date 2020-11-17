@@ -14,7 +14,7 @@ def user_avatar_path(instance: 'Profile', filename: str):
     The path is 'users/user_{uuid}/avatar{ext}',
     where {uuid} is the universally unique identifier of the user, and {ext} is the file extension.
 
-    :param instance: Profile: An instance of the user profile object.
+    :param instance: Profile: An instance of the user profile.
     :param filename: str: The original name of the file.
     :return: str
     """
