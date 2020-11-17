@@ -8,7 +8,7 @@ import os
 import uuid
 
 
-def user_avatar_path(instance, filename):
+def user_avatar_path(instance: 'Profile', filename: str):
     _, ext = os.path.splitext(filename)
     return "users/user_{user_id}/avatar{ext}".format(
         user_id=instance.user.profile.uuid,
@@ -17,6 +17,9 @@ def user_avatar_path(instance, filename):
 
 
 class Profile(models.Model):
+    """
+    The model extends the standard Django's user model with "avatar" and "bio" fields.
+    """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     bio = models.TextField(max_length=1000, blank=True)
