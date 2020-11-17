@@ -10,8 +10,8 @@ import uuid
 
 def user_avatar_path(instance, filename):
     _, ext = os.path.splitext(filename)
-    return "users/user_{user_id}/avatar{ext}".format(
-        user_id=instance.user.profile.uuid,
+    return "users/user_{uuid}/avatar{ext}".format(
+        uuid=instance.user.profile.uuid,
         ext=ext,
     )
 
